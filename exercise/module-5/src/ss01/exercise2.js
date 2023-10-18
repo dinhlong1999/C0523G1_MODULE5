@@ -1,5 +1,5 @@
 // exercise1
-let prime = (num =>{
+const isPrime = (num =>{
     let flag = true;
     if (num === 1){
         flag = false;
@@ -12,18 +12,18 @@ let prime = (num =>{
         }
     }
     return flag;
-})
-console.log(prime(15)); // false
-console.log(prime(2)); //true
-console.log(prime(1)); // false
-console.log(prime(49)); // false
-console.log(prime(47)); // true
+});
+console.log(isPrime(15)); // false
+console.log(isPrime(2)); //true
+console.log(isPrime(1)); // false
+console.log(isPrime(49)); // false
+console.log(isPrime(47)); // true
 
 
 
 let arr = [2,3,9,15,18,23,31,48,47,1];
-let result = arr.filter(number =>
-    (prime(number))
+const result = arr.filter(number =>
+    (isPrime(number))
 );
 console.log(result);
 
@@ -44,18 +44,18 @@ const person ={
         university: 'Harvard University',
     }
 };
-//exercise2
-let student = {
+
+const student = {
     firstName: person.firstName,
     gender:  person.gender,
     degree: person.education.degree,
     english :person.languages[0]
 
-}
+};
 console.log(student);
 
 //exercise3
-let getInfo = ({firstName = "Quan",degree = "NA"}) =>{
+const getInfo = ({firstName = "Quan",degree = "NA"}) =>{
     console.log(firstName)
     console.log(degree)
 }
