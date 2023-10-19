@@ -4,7 +4,7 @@ import viteLogo from '/vite.svg'
 import './App.css'
 
 function App() {
-  const student = [
+  const StudentList = [
     {
       company:'Alfreds Futterkiste',
       contact: 'Maria Anders',
@@ -49,8 +49,8 @@ function App() {
           </tr>
           </thead>
           <tbody>
-          {student.map(student =>(
-              <tr>
+          {StudentList.map((student,index) =>(
+              <tr key={index}>
                 <td>{student.company}</td>
                 <td>{student.contact}</td>
                 <td>{student.country}</td>
