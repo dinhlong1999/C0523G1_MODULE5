@@ -1,0 +1,52 @@
+body{
+  background-color: #EAE9E5;
+}
+h2{
+  border: 1px solid;
+  font-family: cursive;
+  font-size: 50px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  box-shadow: 10px 10px 20px #51504B;
+  width: 800px;
+  border-radius: 10px;
+  background-color: white;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 30%;
+
+}
+.card{
+  height: 400px;
+  margin-top: 5%;
+  margin-left: 20%;
+  box-shadow: 10px 10px 20px #51504B;
+}
+.carousel-inner{
+  box-shadow: 10px 10px 20px #51504B;
+}
+.card-text{
+  text-align: center;
+}
+.money{
+  color: red;
+  float: right;
+}
+.price{
+  float: left;
+}
+img{
+  height: 550px;
+}
+.card{
+  width: 20rem;
+  height: 500px;
+}
+Footer{
+  margin-top: 15px;
+}
+.img{
+  background-image: url("../public/img_4.png");
+}
