@@ -7,26 +7,26 @@ function Footer() {
                     className="d-flex justify-content-between p-4 text-white"
                     style={{backgroundColor:" #EAD7BB"}}>
                     <div className="me-5">
-                        <span>Get connected with us on social networks:</span>
+                        <b style={{color:'black'}}>Get connected with us on social networks:</b>
                     </div>
                     <div>
                         <a href="" className="text-white me-4">
-                            <i className="fab fa-facebook-f"></i>
+                            <i style={{color:'black'}} className ="fab fa-facebook-f"></i>
                         </a>
                         <a href="" className="text-white me-4">
-                            <i className="fab fa-twitter"></i>
+                            <i style={{color:'black'}} className="fab fa-twitter"></i>
                         </a>
                         <a href="" className="text-white me-4">
-                            <i className="fab fa-google"></i>
+                            <i style={{color:'black'}} className="fab fa-google"></i>
                         </a>
                         <a href="" className="text-white me-4">
-                            <i className="fab fa-instagram"></i>
+                            <i style={{color:'black'}} className="fab fa-instagram"></i>
                         </a>
                         <a href="" className="text-white me-4">
-                            <i className="fab fa-linkedin"></i>
+                            <i style={{color:'black'}} className="fab fa-linkedin"></i>
                         </a>
                         <a href="" className="text-white me-4">
-                            <i className="fab fa-github"></i>
+                            <i style={{color:'black'}} className="fab fa-github"></i>
                         </a>
                     </div>
                 </section>
@@ -106,7 +106,7 @@ function Footer() {
                 >
                     © 2023 Copyright:
                     <a className="text-dark" href="https://mdbootstrap.com/"
-                    >MDBootstrap.com</a
+                    >Codegym.com.vn</a
                     >
                 </div>
             </footer>
