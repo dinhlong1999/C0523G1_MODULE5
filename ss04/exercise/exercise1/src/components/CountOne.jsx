@@ -1,17 +1,15 @@
 import {useState} from "react";
 import UseIncrement from "../App.jsx";
+import {UseIncrease} from "./UseIncrease.jsx";
 
 export function CountOne() {
-    const [count,setCount] = useState(0);
-    const increase = () =>{
-        setCount(count+1);
-    }
+    const [count, setCount] = UseIncrease(1)
 
-    return(
+    return (
         <div>
             Count: {count}
             <div>
-                <button onClick={increase}>Add 1</button>
+                <button onClick={setCount}>Add 1</button>
             </div>
         </div>
     )

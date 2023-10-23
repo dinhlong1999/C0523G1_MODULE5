@@ -1,9 +1,10 @@
 import {useState} from 'react'
 import './App.css'
-import {CountOne} from "./components/count-one.jsx";
-import {CountTwo} from "./components/count-two.jsx";
+import {CountOne} from "./components/CountOne.jsx";
+import {CountTwo} from "./components/CountTwo.jsx";
 
 function App() {
+
     return (
         <>
             <CountOne/>
