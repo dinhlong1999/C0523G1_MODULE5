@@ -43,3 +43,6 @@
 export function getAll() {
     return customerList;
 }
+export function saveCustomer(customer){
+    return customerList.push(customer);
+}
