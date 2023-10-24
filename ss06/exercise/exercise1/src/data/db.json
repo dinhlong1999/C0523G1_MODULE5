@@ -1,0 +1,84 @@
+{
+  "ToDos": [
+    {
+      "id": 1,
+      "name": "football"
+    },
+    {
+      "id": 2,
+      "name": "Have diner"
+    },
+    {
+      "id": 3,
+      "name": "Have lunch"
+    },
+    {
+      "id": 4,
+      "name": "Do homework"
+    },
+    {
+      "name": "Dell G15",
+      "id": 5
+    },
+    {
+      "name": "Bao Thien",
+      "id": 6
+    },
+    {
+      "name": "Acer tiger nitro 2023",
+      "id": 7
+    },
+    {
+      "name": "Phuc Long",
+      "id": 8
+    },
+    {
+      "name": "Acer tiger nitro 2023",
+      "id": 9
+    },
+    {
+      "name": "okok",
+      "id": 10
+    },
+    {
+      "name": "Dell G15",
+      "id": 11
+    },
+    {
+      "name": "Dell G15",
+      "id": 12
+    },
+    {
+      "name": "Lenovo legion 5 Pro 2022",
+      "id": 13
+    },
+    {
+      "name": "Dell G15",
+      "id": 14
+    },
+    {
+      "name": "ưeqưeqưe",
+      "id": 15
+    }
+  ],
+  "customer": [
+    {
+      "id": 1,
+      "name": "Long",
+      "address" : "Da Nang",
+      "job": "DEV"
+    },
+    {
+      "id": 2,
+      "name": "Van",
+      "address" : "Ha Noi",
+      "job": "DEV"
+    },
+    {
+      "id": 3,
+      "name": "Hanh",
+      "address" : "Da Nang",
+      "job": "DEV"
+    }
+  ]
+}
