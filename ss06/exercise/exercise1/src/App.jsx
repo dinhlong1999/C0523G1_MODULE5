@@ -2,11 +2,11 @@ import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
-import ToDoList from "./component/ToDoList.jsx";
-import Test from "./component/SaveData.jsx";
+import ToDoList from "./components/ToDoList.jsx";
+import Test from "./components/SaveData.jsx";
 import {BrowserRouter, Route, Routes} from "react-router-dom";
 import React from "react";
-import SaveData from "./component/SaveData.jsx";
+import SaveData from "./components/SaveData.jsx";
 import {ToastContainer} from "react-toastify";
 import "react-toastify/dist/ReactToastify.css"
 

@@ -1,11 +1,6 @@
 {
   "book": [
     {
-      "id": 1,
-      "title": "Đắc nhân tâm",
-      "quantity": "10"
-    },
-    {
       "id": 2,
       "title": "Cách làm giàu nhanh nhất",
       "quantity": "10"
@@ -34,11 +29,6 @@
       "title": "Truyen trinh tham",
       "quantity": "10",
       "id": 7
-    },
-    {
-      "title": "okok",
-      "quantity": "90",
-      "id": 8
     }
   ]
 }

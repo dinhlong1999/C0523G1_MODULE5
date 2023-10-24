@@ -1,10 +1,13 @@
 import {useEffect, useState} from "react";
 import * as libraryService from "../service/libraryService.jsx";
 import {NavLink, Outlet, useNavigate} from "react-router-dom";
+import Modal from "react-bootstrap/Modal";
 
 export function Libraries() {
     const [book,setBook] = useState([]);
-    // const navigate = useNavigate();
+    // const [isShow,setShowModal] = useState(false);
+    // const [bookId,setBookId] = useState();
+    const navigate = useNavigate();
 
     useEffect(() =>{
         fetchData();
@@ -14,7 +17,13 @@ export function Libraries() {
         let res = await libraryService.fetchData();
         setBook(res);
     }
-
+    const remove = async (bookId) =>{
+        const temp = await libraryService.deleteBook(bookId);
+        if (temp.status === 200){
+            navigate("/library")
+            alert("ok")
+        }
+    }
     return(
         <div className="container">
             <h1>Library</h1>
@@ -40,14 +49,26 @@ export function Libraries() {
                             </NavLink>
                         </td>
                         <td>
-                                <button type="button" className="btn btn-outline-warning">Delete</button>
+                                <button type="button" className="btn btn-outline-warning"
+                                        onClick={() =>{remove(item.id)}}>
+                                    Delete
+                                </button>
                         </td>
                     </tr>
                 )}
                 </tbody>
             </table>
-            <Outlet/>
+            {/*{isShow && (*/}
+            {/*    <div className="modal">*/}
+            {/*        <div className="modal-content">*/}
+            {/*            <h2>Modal Title</h2>*/}
+            {/*            <p>This is the modal content.</p>*/}
+            {/*            <button onClick={closeModal}>Đóng Modal</button>*/}
+            {/*        </div>*/}
+            {/*    </div>*/}
+            {/*)}*/}
         </div>
+
     )
 
 }

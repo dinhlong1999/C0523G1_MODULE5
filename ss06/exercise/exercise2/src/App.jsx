@@ -2,10 +2,10 @@ import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
-import {Libraries} from "./Components/Libraries.jsx";
+import {Libraries} from "./components/Libraries.jsx";
 import {BrowserRouter, Route, Routes} from "react-router-dom";
-import {EditLibrary} from "./Components/EditLibrary.jsx";
-import {CreateLibrary} from "./Components/CreateLibrary.jsx";
+import {EditLibrary} from "./components/EditLibrary.jsx";
+import {CreateLibrary} from "./components/CreateLibrary.jsx";
 import {ToastContainer} from "react-toastify";
 import "react-toastify/dist/ReactToastify.css"
 

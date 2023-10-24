@@ -16,7 +16,7 @@ export const addLibrary = async (library) =>{
         console.log(e)
     }
 }
-export const getLibraryById =async (libraryID) =>{
+export const getLibraryById = async (libraryID) =>{
     try {
         let result = await axios.get(`http://localhost:8080/book/${libraryID}`)
         return result.data
@@ -24,10 +24,17 @@ export const getLibraryById =async (libraryID) =>{
         console.log(e)
     }
 }
-export const editLibrary = async (libraryID) =>{
+export const editLibrary = async (book) =>{
     try {
-        let editBook = await axios.patch(`http://localhost:8080/book/${libraryID}`)
-        return editBook.status
+       return await axios.put(`http://localhost:8080/book/${book.id}`,book)
+
+    }catch (e){
+        console.log(e)
+    }
+}
+export const deleteBook = async (bookID) =>{
+    try {
+        return await axios.delete(`http://localhost:8080/book/${bookID}`)
     }catch (e){
         console.log(e)
     }
