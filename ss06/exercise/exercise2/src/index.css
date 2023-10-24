@@ -1,0 +1,21 @@
+body{
+background-color: #D0D4CA;
+    font-family: cursive;
+}
+td,th{
+    text-align: center;
+
+}
+h1{
+    text-align: center;
+    border: 1px solid;
+    box-shadow: 10px 10px 20px #51504B;
+    border-radius: 10px;
+    background-color: white;
+    margin-top: 5px;
+}
+table{
+    box-shadow: 10px 10px 20px #51504B;
+
+
+}
