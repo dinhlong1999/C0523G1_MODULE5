@@ -1,10 +1,7 @@
 import * as libraryService from "../service/libraryService.jsx";
 import {toast} from "react-toastify";
 
-export function DeleteLibrary(book) {
-
-    const {show, select, close} = book;
-
+export function DeleteLibrary({show, select, close}) {
     const remove = async (bookDelete) => {
         const temp = await libraryService.deleteBook(bookDelete.id);
         console.log(temp)
