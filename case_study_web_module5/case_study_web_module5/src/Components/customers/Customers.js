@@ -1,5 +1,24 @@
-import {getAll} from "../../service/customerService"
-export function Customer() {
+import * as customerTypeService from "../../service/customerTypeService"
+import * as customerService from "../../service/customerService"
+import {useEffect, useState} from "react";
+export function Customers() {
+    const [customers,setCustomer] = useState([]);
+    const [typeCustomers,setTypeCustomer] = useState();
+    useEffect(()=>{
+        getDataCustomers();
+        getDataCustomerType()
+    },[])
+
+    const getDataCustomers = async () =>{
+        let result = await customerService.getAll();
+        console.log(result)
+        setCustomer(result);
+    }
+
+    const getDataCustomerType = async () =>{
+        let resultType = await customerTypeService.getAllTypeCustomer();
+        setTypeCustomer(resultType);
+    }
     return (
         <div className="container-fluid">
             <h1 id="bd" className="h3 mb-2 text-gray-800">CUSTOMER</h1>
@@ -15,21 +34,21 @@ export function Customer() {
                             <th>Gender</th>
                             <th>Phone number</th>
                             <th>Room rented</th>
-                            <th>Rank</th>
+                            <th>Type customer</th>
                             <th colSpan="2">Action</th>
                         </tr>
                         </thead>
                         <tbody>
-                        {getAll().map((customer,index) =>
+                        {customers.map((customer,index)=>
                             <tr key={index}>
                                 <td>{index+1}</td>
                                 <td>{customer.name}</td>
                                 <td>{customer.birthday}</td>
-                                <td>{customer.address}</td>
-                                <td>{customer.gender}</td>
+                                <td>{customer.address }</td>
+                                <td>{customer.gender === 1 ? "Male":"Female"}</td>
                                 <td>{customer.phoneNumber}</td>
                                 <td>{customer.roomRented}</td>
-                                <td>{customer.rank}</td>
+                                <td>{customer.customerType.name}</td>
                                 <td><a className="btn btn-outline-info" href="#" role="button">Edit</a></td>
                                 <td>
                                     <button type="button" className="btn btn-outline-danger" data-bs-toggle="modal"

@@ -65,3 +65,6 @@ Footer{
   margin-bottom: 10px;
   font-family: cursive;
 }
+.error{
+  color: red;
+}
