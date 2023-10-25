@@ -46,12 +46,15 @@ export function Medical() {
             .matches(/^[a-zA-z0-9+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9]+$/, "Invalid email address")
 
     }
+    const submitForm =(event) =>{
+        console.log(event)
+        alert("Success")
+
+    }
     return (
         <Formik initialValues={info}
                 validationSchema={Yup.object(validateObject)}
-                onSubmit={(values) => {
-                    alert("success")
-                }}>
+                onSubmit={(event) =>submitForm(event)}>
             <div>
                 <div className="container px-5 my-5">
                     <h2 style={{textAlign: "center"}}>TỜ KHAI Y TẾ</h2>

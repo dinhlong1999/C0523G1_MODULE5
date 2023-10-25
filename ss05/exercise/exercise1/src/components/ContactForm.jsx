@@ -14,6 +14,11 @@ export function ContactForm() {
         phone: "",
         message: ""
     };
+    const submitForm =(event) =>{
+        console.log(event)
+        alert("Success")
+
+    }
     const validateObject = {
         name: Yup.string()
             .required("Required"),
@@ -28,10 +33,7 @@ export function ContactForm() {
             <Formik
                 initialValues={initValue}
                 validationSchema={Yup.object(validateObject)}
-                onSubmit={(values) => {
-                    alert("success")
-
-            }}>
+                onSubmit={(event) =>submitForm(event)}>
                 <div>
                     <h1>Contact login</h1>
                     <Form>
