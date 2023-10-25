@@ -11,7 +11,7 @@ export function EditLibrary() {
 
     useEffect(()=>{
         bookByID()
-    },[libraryID]);
+    },[]);
 
 
     const bookByID = async () => {

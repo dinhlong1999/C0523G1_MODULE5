@@ -1,16 +1,6 @@
 {
   "book": [
     {
-      "id": 5,
-      "title": "Trạng quỷnh",
-      "quantity": "10"
-    },
-    {
-      "title": "Truyen hai viet nam",
-      "quantity": "10",
-      "id": 6
-    },
-    {
       "title": "Truyen trinh tham",
       "quantity": "10",
       "id": 7
@@ -19,6 +9,11 @@
       "title": "okok",
       "quantity": "10",
       "id": 8
+    },
+    {
+      "title": "ssss",
+      "quantity": 0,
+      "id": 9
     }
   ]
 }

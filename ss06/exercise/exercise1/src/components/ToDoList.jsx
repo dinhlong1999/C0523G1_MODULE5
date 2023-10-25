@@ -8,11 +8,11 @@ function ToDoList() {
 
 
     useEffect(() => {
-        temp()
+        getData()
     }, []);
 
 
-    const temp = async () => {
+    const getData = async () => {
         const res = await toDoService.fetchData();
         setToDos(res);
     }
