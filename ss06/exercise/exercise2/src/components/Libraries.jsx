@@ -2,28 +2,33 @@ import {useEffect, useState} from "react";
 import * as libraryService from "../service/libraryService.jsx";
 import {NavLink, Outlet, useNavigate} from "react-router-dom";
 import Modal from "react-bootstrap/Modal";
+import {DeleteLibrary} from "./DeleteLibrary.jsx";
 
 export function Libraries() {
     const [book,setBook] = useState([]);
-    // const [isShow,setShowModal] = useState(false);
-    // const [bookId,setBookId] = useState();
-    const navigate = useNavigate();
+    const [isShow,setShow] = useState(false);
+    const [bookDelete,setBookDelete] = useState(null);
 
     useEffect(() =>{
         fetchData();
     },[])
 
+
     const fetchData = async () =>{
         let res = await libraryService.fetchData();
         setBook(res);
     }
-    const remove = async (bookId) =>{
-        const temp = await libraryService.deleteBook(bookId);
-        if (temp.status === 200){
-            navigate("/library")
-            alert("ok")
-        }
+    const showModal = async (book) =>{
+        setBookDelete(book)
+        setShow(true)
     }
+    const closeModal = async () =>{
+        fetchData()
+        setShow(false)
+        setBookDelete(null)
+
+    }
+
     return(
         <div className="container">
             <h1>Library</h1>
@@ -49,24 +54,24 @@ export function Libraries() {
                             </NavLink>
                         </td>
                         <td>
+                            <NavLink to="/library">
                                 <button type="button" className="btn btn-outline-warning"
-                                        onClick={() =>{remove(item.id)}}>
+                                        onClick={() =>showModal(item)}>
                                     Delete
                                 </button>
+                            </NavLink>
+
                         </td>
                     </tr>
                 )}
                 </tbody>
             </table>
-            {/*{isShow && (*/}
-            {/*    <div className="modal">*/}
-            {/*        <div className="modal-content">*/}
-            {/*            <h2>Modal Title</h2>*/}
-            {/*            <p>This is the modal content.</p>*/}
-            {/*            <button onClick={closeModal}>Đóng Modal</button>*/}
-            {/*        </div>*/}
-            {/*    </div>*/}
-            {/*)}*/}
+        <DeleteLibrary
+            isShow={isShow}
+            bookDelete={bookDelete}
+            closeModal={closeModal}
+        >
+        </DeleteLibrary>
         </div>
 
     )

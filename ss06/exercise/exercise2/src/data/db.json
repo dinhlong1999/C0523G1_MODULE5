@@ -1,21 +1,6 @@
 {
   "book": [
     {
-      "id": 2,
-      "title": "Cách làm giàu nhanh nhất",
-      "quantity": "10"
-    },
-    {
-      "id": 3,
-      "title": "Chiến tranh Việt Nam",
-      "quantity": "10"
-    },
-    {
-      "id": 4,
-      "title": "Doremon-nobita",
-      "quantity": "10"
-    },
-    {
       "id": 5,
       "title": "Trạng quỷnh",
       "quantity": "10"
@@ -29,6 +14,11 @@
       "title": "Truyen trinh tham",
       "quantity": "10",
       "id": 7
+    },
+    {
+      "title": "okok",
+      "quantity": "10",
+      "id": 8
     }
   ]
 }

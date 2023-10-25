@@ -32,9 +32,9 @@ export const editLibrary = async (book) =>{
         console.log(e)
     }
 }
-export const deleteBook = async (bookID) =>{
+export const deleteBook = async (id) =>{
     try {
-        return await axios.delete(`http://localhost:8080/book/${bookID}`)
+        return await axios.delete(`http://localhost:8080/book/`+id)
     }catch (e){
         console.log(e)
     }
