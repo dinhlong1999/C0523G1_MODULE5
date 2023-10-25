@@ -6,12 +6,25 @@ import Header from "./Components/header";
 import Footer from "./Components/footer";
 import './Components/customers/customer.css'
 import {CreateCustomers} from "./Components/customers/CreateCustomers";
+import {BrowserRouter, Route, Routes} from "react-router-dom";
+import {ToastContainer} from "react-toastify";
+import "react-toastify/dist/ReactToastify.css"
+import {EditCustomer} from "./Components/customers/EditCustomer";
 function App() {
   return (
   <>
-    <Header/>
-    <CreateCustomers/>
-    <Footer/>
+    <BrowserRouter>
+      <Header/>
+      <Routes>
+        <Route path="/customers" element={<Customers/>}></Route>
+        <Route path="/customers/create" element={<CreateCustomers/>}></Route>
+        <Route path="/" element={<Home/>}></Route>
+        <Route path="/customers/edit/:customerId" element={<EditCustomer/>}></Route>
+      </Routes>
+      <Footer/>
+    </BrowserRouter>
+    <ToastContainer></ToastContainer>
+
   </>
   );
 }

@@ -1,24 +1,11 @@
 {
   "customers": [
     {
-      "id": 1,
-      "name": "Dinh Long",
-      "birthday": "11-10-1999",
-      "address": "Da Nang",
-      "gender": 1,
-      "phoneNumber": "0932533481",
-      "roomRented": "P101",
-      "customerType": {
-        "id": 1,
-        "name": "Gold"
-      }
-    },
-    {
       "id": 2,
       "name": "Nha Van",
-      "birthday": "03-05-2001",
+      "birthday": "2001-05-03",
+      "gender": "0",
       "address": "Sai Gon",
-      "gender": 0,
       "phoneNumber": "0783685099",
       "roomRented": "P102",
       "customerType": {
@@ -29,9 +16,9 @@
     {
       "id": 3,
       "name": "Hong Hanh",
-      "birthday": "27-10-1971",
+      "birthday": "1971-10-27",
+      "gender": "0",
       "address": "Hue",
-      "gender": 0,
       "phoneNumber": "0905346958",
       "roomRented": "P103",
       "customerType": {
@@ -42,15 +29,54 @@
     {
       "id": 4,
       "name": "Dinh Lan",
-      "birthday": "05-11-1969",
+      "birthday": "1969-11-05",
+      "gender": "1",
       "address": "Da Nang",
-      "gender": 1,
       "phoneNumber": "0905273809",
       "roomRented": "P102",
       "customerType": {
         "id": 3,
         "name": "Silver"
       }
+    },
+    {
+      "name": "Hoàng Phong",
+      "birthday": "2020-10-20",
+      "address": "29 Nguyễn Khang",
+      "gender": 1,
+      "phoneNumber": "0932533481",
+      "roomRented": "P101",
+      "customerType": {
+        "id": 2,
+        "name": "Diamond"
+      },
+      "id": 6
+    },
+    {
+      "name": "Thanh Duy",
+      "birthday": "2018-05-24",
+      "address": "Quảng nam",
+      "gender": 1,
+      "phoneNumber": "0932533481",
+      "roomRented": "P101",
+      "customerType": {
+        "id": 2,
+        "name": "Diamond"
+      },
+      "id": 7
+    },
+    {
+      "name": "Đình Long",
+      "birthday": "1999-10-11",
+      "address": "04 Nguyễn Giản Thanh",
+      "gender": 1,
+      "phoneNumber": "0932533481",
+      "roomRented": "P101",
+      "customerType": {
+        "id": 1,
+        "name": "Gold"
+      },
+      "id": 8
     }
   ],
   "customerType": [
