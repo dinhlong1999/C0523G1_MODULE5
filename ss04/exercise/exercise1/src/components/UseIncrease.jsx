@@ -1,6 +1,6 @@
 import {useState} from "react";
 
-export function UseIncrease(step) {
+export function useIncrease(step) {
     const [count,setCount] = useState(0);
     const increase = () =>{
         setCount(prevState => prevState + step)
