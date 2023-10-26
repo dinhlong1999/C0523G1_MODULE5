@@ -18,7 +18,9 @@ function Header() {
                             <a className="nav-link" style={{color: "black"}} href="javascript:void(0)">Facility</a>
                         </li>
                         <li className="nav-item">
-                            <a className="nav-link" style={{color: "black"}} href="javascript:void(0)">Contact</a>
+                            <NavLink to="/contracts" style={{textDecoration: "none"}}>
+                                <a className="nav-link" style={{color: "black"}}>Contract</a>
+                            </NavLink>
                         </li>
                         <li className="nav-item">
                             <NavLink to="/customers" style={{textDecoration: "none"}}>

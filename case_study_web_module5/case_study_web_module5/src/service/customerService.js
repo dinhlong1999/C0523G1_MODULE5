@@ -2,9 +2,9 @@ import axios from "axios";
 
  const URL_CUSTOMERS ="http://localhost:8080/customers/";
 
-export const getAll = async () =>{
+export const getAll = async (nameSearch) =>{
     try {
-        let result = await axios.get(URL_CUSTOMERS)
+        let result = await axios.get(URL_CUSTOMERS + `?name_like=${nameSearch}`)
         return result.data;
     }catch (e){
         console.log(e)

@@ -28,7 +28,7 @@ export function DeleteCustomer({show, closeModal, select}) {
                                             onClick={closeModal}></button>
                                 </div>
                                 <div className="modal-body">
-                                    <p>Do you want to delete<span style={{color:"red"}}> {select.name}</span></p>
+                                    <p>Do you want to delete<span style={{color:"red"}}> {select.name}?</span></p>
                                 </div>
                                 <div className="modal-footer">
                                     <button type="button" className="btn btn-secondary" data-bs-dismiss="modal"
@@ -37,7 +37,8 @@ export function DeleteCustomer({show, closeModal, select}) {
                                     <button type="button" className="btn btn-primary"
                                             onClick={() => {
                                                 remove(select)
-                                            }}>Delete
+                                            }}><i
+                                        className="fa-solid fa-trash"></i>
                                     </button>
                                 </div>
                             </div>

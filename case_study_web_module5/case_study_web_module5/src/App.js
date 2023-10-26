@@ -10,6 +10,9 @@ import {BrowserRouter, Route, Routes} from "react-router-dom";
 import {ToastContainer} from "react-toastify";
 import "react-toastify/dist/ReactToastify.css"
 import {EditCustomer} from "./Components/customers/EditCustomer";
+import {ContractList} from "./Components/Contracts/ContractList";
+import {CreateContract} from "./Components/Contracts/CreateContract";
+import {EditContract} from "./Components/Contracts/EditContract";
 function App() {
   return (
   <>
@@ -20,6 +23,9 @@ function App() {
         <Route path="/customers/create" element={<CreateCustomers/>}></Route>
         <Route path="/" element={<Home/>}></Route>
         <Route path="/customers/edit/:customerId" element={<EditCustomer/>}></Route>
+        <Route path="/contracts" element={<ContractList/>}></Route>
+        <Route path="/contracts/create" element={<CreateContract/>}></Route>
+        <Route path='/contracts/edit/:contractID' element={<EditContract/>}></Route>
       </Routes>
       <Footer/>
     </BrowserRouter>

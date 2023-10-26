@@ -38,30 +38,31 @@ export function CreateCustomers (){
         address :"",
         gender:"",
         phoneNumber:"",
-        roomRented:"",
+        email:"",
         customerType:JSON.stringify({
             id: 1,
             name:"Gold"
         })
     }
-    const handleSubmit = (event) =>{
-        console.log(event)
-        alert("success")
-    }
+    const today = new Date();
+    const years18 = new Date(today);
+     years18.setFullYear(today.getFullYear() -18)
     const validateObject ={
         name:Yup.string()
-            .required("Required"),
+            .required("Required")
+            .matches(/^[A-Z][a-z]+(\s[A-Z][a-z]+)+$/,"First letter must be upper case "),
         birthday: Yup.date()
-            .required("Required"),
+            .required()
+            .max(years18,"Must be 18"),
         address: Yup.string()
             .required("Required"),
         gender: Yup.string()
             .required("Required"),
         phoneNumber: Yup.string()
             .required("Required"),
-            // .matches(/^[a-zA-z0-9+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9]+$/, "Invalid email address"),
-        roomRented: Yup.string()
-            .required("Required"),
+        email: Yup.string()
+            .required()
+            .matches(/^[a-zA-z0-9+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9]+$/, "Invalid email address"),
 
     }
 
@@ -79,7 +80,7 @@ export function CreateCustomers (){
                     <div className="mb-3">
                         <label className="form-label" htmlFor="birthday"><b>Birthday</b><span style={{color:"red"}}>*</span></label>
                         <Field className="form-control" name="birthday" id="birthday" type="date" placeholder="Birthday"/>
-                        <ErrorMessage className="error" name='name' component='div' />
+                        <ErrorMessage className="error" name='birthday' component='div' />
                     </div>
                     <div className="mb-3">
                         <label className="form-label" htmlFor="address"><b>Address</b><span style={{color:"red"}}>*</span></label>
@@ -103,9 +104,9 @@ export function CreateCustomers (){
                         <ErrorMessage className="error" name='phoneNumber' component='div' />
                     </div>
                     <div className="mb-3">
-                        <label className="form-label" htmlFor="phoneNumber"><b>Room rented</b><span style={{color:"red"}}>*</span></label>
-                        <Field className="form-control" id="phoneNumber" name="roomRented" type="text" placeholder="Room rented"/>
-                        <ErrorMessage className="error" name='roomRented' component='div' />
+                        <label className="form-label" htmlFor="email"><b>Email</b><span style={{color:"red"}}>*</span></label>
+                        <Field className="form-control" id="email" name="email" type="text" placeholder="email"/>
+                        <ErrorMessage className="error" name='email' component='div' />
                     </div>
                     <div className="mb-3">
                         <label className="form-label" htmlFor="typeCustomer"><b>Type customer</b><span style={{color:"red"}}>*</span></label>

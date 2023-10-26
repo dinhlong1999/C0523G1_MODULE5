@@ -6,9 +6,9 @@ h2{
   font-family: cursive;
   font-size: 50px;
   margin-top: 5px;
-  margin-bottom: 5px;
+  margin-bottom: 25px;
   box-shadow: 10px 10px 20px #51504B;
-  width: 800px;
+  width: 85%;
   border-radius: 10px;
   background-color: white;
   height: 50px;
@@ -67,4 +67,7 @@ Footer{
 }
 .error{
   color: red;
+}
+table{
+  margin-top: 10px;
 }

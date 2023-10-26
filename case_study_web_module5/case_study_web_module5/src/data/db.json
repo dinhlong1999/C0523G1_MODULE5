@@ -2,12 +2,12 @@
   "customers": [
     {
       "id": 2,
-      "name": "Nha Van",
+      "name": "Quynh",
       "birthday": "2001-05-03",
       "gender": "0",
       "address": "Sai Gon",
       "phoneNumber": "0783685099",
-      "roomRented": "P102",
+      "email": "tsaivan569@gmail.com",
       "customerType": {
         "id": 2,
         "name": "Diamond"
@@ -20,7 +20,7 @@
       "gender": "0",
       "address": "Hue",
       "phoneNumber": "0905346958",
-      "roomRented": "P103",
+      "email": "hanh2710@gmail.com",
       "customerType": {
         "id": 3,
         "name": "Silver"
@@ -33,7 +33,7 @@
       "gender": "1",
       "address": "Da Nang",
       "phoneNumber": "0905273809",
-      "roomRented": "P102",
+      "email": "lan0511@gmail.com",
       "customerType": {
         "id": 3,
         "name": "Silver"
@@ -45,7 +45,7 @@
       "address": "29 Nguyễn Khang",
       "gender": 1,
       "phoneNumber": "0932533481",
-      "roomRented": "P101",
+      "email": "phong2010@gmail.com",
       "customerType": {
         "id": 2,
         "name": "Diamond"
@@ -58,7 +58,7 @@
       "address": "Quảng nam",
       "gender": 1,
       "phoneNumber": "0932533481",
-      "roomRented": "P101",
+      "email": "duy2405@gmail.com",
       "customerType": {
         "id": 2,
         "name": "Diamond"
@@ -66,16 +66,17 @@
       "id": 7
     },
     {
-      "name": "Đình Long",
+      "name": "Dinh Long",
       "birthday": "1999-10-11",
-      "address": "04 Nguyễn Giản Thanh",
+      "address": "Da Nang",
       "gender": 1,
       "phoneNumber": "0932533481",
-      "roomRented": "P101",
+      "email": "long1110dn@gmail.com",
       "customerType": {
         "id": 1,
         "name": "Gold"
       },
+      "roomRented": "long1110dn@gmail.com",
       "id": 8
     }
   ],
@@ -96,31 +97,51 @@
   "contracts": [
     {
       "id": 1,
-      "contactDate": "01-10-2023",
-      "endDate": "03-10-2023",
-      "deposits": "1.500.000Đ",
-      "cost": "3.000.000Đ"
+      "contractNumber": "HD-001",
+      "startDate": "2023-12-26",
+      "endDate": "2023-12-27",
+      "depositAmount": 5000000,
+      "totalPaymentAmount": 15000000
     },
     {
       "id": 2,
-      "contactDate": "01-10-2023",
-      "endDate": "03-10-2023",
-      "deposits": "1.500.000Đ",
-      "cost": "3.000.000Đ"
+      "contractNumber": "HD-002",
+      "startDate": "2024-02-10",
+      "endDate": "2024-04-10",
+      "depositAmount": 6000000,
+      "totalPaymentAmount": 18000000
     },
     {
       "id": 3,
-      "contactDate": "01-10-2023",
-      "endDate": "03-10-2023",
-      "deposits": "1.500.000Đ",
-      "cost": "3.000.000Đ"
+      "contractNumber": "HD-003",
+      "startDate": "2024-03-05",
+      "endDate": "2024-05-05",
+      "depositAmount": 5500000,
+      "totalPaymentAmount": 16500000
     },
     {
       "id": 4,
-      "contactDate": "01-10-2023",
-      "endDate": "03-10-2023",
-      "deposits": "1.500.000Đ",
-      "cost": "3.000.000Đ"
+      "contractNumber": "HD004",
+      "startDate": "2023-04-20",
+      "endDate": "2023-06-20",
+      "depositAmount": 7000000,
+      "totalPaymentAmount": 21000000
+    },
+    {
+      "id": 5,
+      "contractNumber": "HD005",
+      "startDate": "2023-05-15",
+      "endDate": "2023-07-15",
+      "depositAmount": 4500000,
+      "totalPaymentAmount": 13500000
+    },
+    {
+      "id": 6,
+      "contractNumber": "HD-006",
+      "startDate": "2024-06-08",
+      "endDate": "2024-08-08",
+      "depositAmount": 6500000,
+      "totalPaymentAmount": 19500000
     }
   ],
   "facilities": [

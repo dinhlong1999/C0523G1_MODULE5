@@ -50,7 +50,7 @@ export function EditCustomer() {
         phoneNumber: Yup.string()
             .required("Required"),
         // .matches(/^[a-zA-z0-9+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9]+$/, "Invalid email address"),
-        roomRented: Yup.string()
+        email: Yup.string()
             .required("Required"),
 
     }
@@ -61,14 +61,14 @@ export function EditCustomer() {
         gender: customer.gender +"",
         address: customer.address,
         phoneNumber: customer.phoneNumber,
-        roomRented: customer.roomRented,
+        email: customer.email,
         customerType: JSON.stringify(customer.customerType)
     }
     return (
         <Formik initialValues={initValue} onSubmit={(customer) => updateCustomer(customer)}
                 validationSchema={Yup.object(validateObject)}>
             <div className="container px-5 my-5">
-                <h2 style={{marginLeft: '17%'}}>Update information Customer</h2>
+                <h2 style={{marginLeft: '7%'}}>Update information Customer</h2>
                 <Form id="contactForm" data-sb-form-api-token="API_TOKEN">
                     <div className="mb-3">
                         <label className="form-label" htmlFor="fullName"><b>Full name</b><span
@@ -108,11 +108,11 @@ export function EditCustomer() {
                         <ErrorMessage className="error" name='phoneNumber' component='div'/>
                     </div>
                     <div className="mb-3">
-                        <label className="form-label" htmlFor="phoneNumber"><b>Room rented</b><span
+                        <label className="form-label" htmlFor="email"><b>email</b><span
                             style={{color: "red"}}>*</span></label>
-                        <Field className="form-control" id="phoneNumber" name="roomRented" type="text"
+                        <Field className="form-control" id="email" name="email" type="text"
                                placeholder="Room rented"/>
-                        <ErrorMessage className="error" name='roomRented' component='div'/>
+                        <ErrorMessage className="error" name='email' component='div'/>
                     </div>
                     <div className="mb-3">
                         <label className="form-label" htmlFor="typeCustomer"><b>Type customer</b><span
