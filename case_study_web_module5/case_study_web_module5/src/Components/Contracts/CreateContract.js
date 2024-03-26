@@ -70,7 +70,7 @@ export function CreateContract() {
                     <div className="mb-3">
                         <label className="form-label" htmlFor="totalPaymentAmount"><b>Total Payment Amount</b><span style={{color:"red"}}>*</span></label>
                         <Field className="form-control" id="totalPaymentAmount" name="totalPaymentAmount" type="text" placeholder="Total Payment Amount"/>
-                        <ErrorMessage className="error" name='totalPaymentAmount' component='div' />
+                        {/*<ErrorMessage className="error" name='totalPaymentAmount' component='div' />*/}
                     </div>
                     <div className="d-grid">
                         <button type='submit' style={{width:"20%",marginLeft:"38%"}}  className='btn btn-primary'>Submit</button>

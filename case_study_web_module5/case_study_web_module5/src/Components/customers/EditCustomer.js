@@ -33,10 +33,10 @@ export function EditCustomer() {
             toast.success("Update success")
         }
     }
+
     if (!customer) {
         return null;
     }
-
 
     const validateObject = {
         name: Yup.string()
@@ -49,13 +49,14 @@ export function EditCustomer() {
             .required("Required"),
         phoneNumber: Yup.string()
             .required("Required"),
-        // .matches(/^[a-zA-z0-9+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9]+$/, "Invalid email address"),
+
         email: Yup.string()
-            .required("Required"),
+            .required("Required")
+        .matches(/^[a-zA-z0-9+-.]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9]+$/, "Invalid email address")
 
     }
     const initValue = {
-        id: customer.id,
+        id:customer.id,
         name: customer.name,
         birthday:customer.birthday,
         gender: customer.gender +"",
@@ -64,6 +65,7 @@ export function EditCustomer() {
         email: customer.email,
         customerType: JSON.stringify(customer.customerType)
     }
+
     return (
         <Formik initialValues={initValue} onSubmit={(customer) => updateCustomer(customer)}
                 validationSchema={Yup.object(validateObject)}>

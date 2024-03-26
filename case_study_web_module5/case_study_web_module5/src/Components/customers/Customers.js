@@ -5,22 +5,35 @@ import {NavLink} from "react-router-dom";
 import Header from "../header";
 import Footer from "../footer";
 import {DeleteCustomer} from "./DeleteCustomer";
+import {PageList} from "../Pages";
 
 export function Customers() {
     const [customers, setCustomer] = useState([]);
-    const [typeCustomers, setTypeCustomer] = useState();
+    const [typeCustomers, setTypeCustomer] = useState([]);
     const [show, setShow] = useState(false);
     const [select, setSelect] = useState(null);
     const [nameSearch,setNameSearch] = useState("");
+    const [typeNameSearch,setTypeName] =useState("");
+    const [currentPage,setPage] = useState(1);
+    const [totalCustomer,setTotalCustomer] = useState(0)
     useEffect(() => {
         getDataCustomers();
         getDataCustomerType()
-    }, [nameSearch])
+    }, [nameSearch,typeNameSearch,currentPage])
 
-    const getDataCustomers = async () => {
-        let result = await customerService.getAll(nameSearch);
-        console.log(result)
-        setCustomer(result);
+    // const getDataCustomers = async () => {
+    //     let result = await customerService.getAll(nameSearch);
+    //     console.log(result)
+    //     setCustomer(result);
+    // }
+
+    const getDataCustomers = async () =>{
+        let result = await customerService.getAll(currentPage,nameSearch,typeNameSearch);
+        // const dataTemp =result.data.sort((a,b) =>{
+        //     return b.id - a.id;
+        // })
+        setCustomer(result.data);
+        setTotalCustomer(result.headers["x-total-count"])
     }
 
     const getDataCustomerType = async () => {
@@ -46,10 +59,17 @@ export function Customers() {
                 <NavLink to="/customers/create">
                     <button type="button" className="btn btn-outline-success">Create customer</button><br/>
                 </NavLink>
-                <input type="text" placeholder="Please input name search" style={{width:"14%",borderRadius:"10px",padding:"5px"}} onChange={event => setNameSearch(event.target.value)}/>
+                <input className={"input"} type="text" placeholder="Please input name search"  onChange={event => setNameSearch(event.target.value)}/>
+                {/*<input className={"input"} type="text" placeholder="Please input type name search"  onChange={event => setTypeName(event.target.value)}/>*/}
+                <select className={"input"} onChange={(values) =>setTypeName(values.target.value)}>
+                    <option value="">---Please choose type customer</option>
+                    {typeCustomers.map((item)=>
+                        <option key={item.id} value={item.name}>{item.name}</option>
+                    )}
+                </select>
                 <div className="card-body">
                     <div className="table-responsive" style={{overflowX: "visible"}}>
-                        <table className="table table-bordered" id="dataTable" width="100%" cellSpacing="0">
+                        <table className="table table-bordered table-hover" id="dataTable" width="100%" cellSpacing="0">
                             <thead>
                             <tr>
                                 <th>N0.</th>
@@ -66,14 +86,14 @@ export function Customers() {
                             <tbody>
                             {customers.map((customer, index) =>
                                 <tr key={index}>
-                                    <td>{index + 1}</td>
+                                    <td>{index+1}</td>
                                     <td>{customer.name}</td>
                                     <td>{ new Date(customer.birthday).toLocaleDateString('en-US')}</td>
                                     <td>{customer.address}</td>
                                     <td>{customer.gender === 1 ? "Male" : "Female"}</td>
                                     <td>{customer.phoneNumber}</td>
                                     <td>{customer.email}</td>
-                                    <td>{customer.customerType.name}</td>
+                                    <td>{customer.typeCustomers.name}</td>
                                     <td>
                                         <NavLink to={`/customers/edit/${customer.id}`}>
                                             <button type="button" className="btn btn-outline-warning"><i
@@ -83,7 +103,8 @@ export function Customers() {
                                     <td>
                                         <button type="button" className="btn btn-outline-danger"
                                                 onClick={() => showModal(customer)}>
-                                            Remove
+                                            <i
+                                            className="fa-solid fa-trash"></i>
                                         </button>
                                     </td>
                                 </tr>
@@ -92,6 +113,14 @@ export function Customers() {
                         </table>
                     </div>
                 </div>
+
+                {/*    <li><button className={"bt"}>&laquo;</button></li>*/}
+                {/*    <li className="page-item active" onClick={}><button className={"bt"}>1</button></li>*/}
+                {/*    <li><button className={"bt"}>2</button></li>*/}
+                {/*    <li><button className={"bt"}>3</button></li>*/}
+                {/*    <li><button className={"bt"}>4</button></li>*/}
+                {/*    <li><button className={"bt"}>&raquo;</button></li>*/}
+                {/*</ul>*/}
             </div>
             <DeleteCustomer
                 show={show}
@@ -99,6 +128,12 @@ export function Customers() {
                 select={select}
             >
             </DeleteCustomer>
+            <PageList
+                currentPage={currentPage}
+                totalCustomer={totalCustomer}
+                sentPage={setPage}
+            >
+            </PageList>
         </>
     )
 }

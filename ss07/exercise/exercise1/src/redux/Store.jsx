@@ -5,4 +5,4 @@ import {rootReducer} from "./reducers/RootReducer.jsx";
 const initStore = {};
 const middleware = [thunk];
 const store = createStore(rootReducer,initStore,applyMiddleware(...middleware));
-export default store;
+export default store

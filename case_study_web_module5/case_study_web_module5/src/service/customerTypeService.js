@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const URL_TYPE = "http://localhost:8080/customerType";
+const URL_TYPE = "http://localhost:8081/customerType";
 
 export const getAllTypeCustomer = async () =>{
     try {

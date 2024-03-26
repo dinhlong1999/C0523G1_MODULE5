@@ -62,7 +62,7 @@ export function CreateCustomers (){
             .required("Required"),
         email: Yup.string()
             .required()
-            .matches(/^[a-zA-z0-9+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9]+$/, "Invalid email address"),
+            .matches(/^[a-zA-z0-9+-.]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9]+$/, "Invalid email address"),
 
     }
 
@@ -70,7 +70,7 @@ export function CreateCustomers (){
         <>
             <Formik initialValues={initValue} onSubmit={(customer) =>saveCustomer(customer)} validationSchema={Yup.object(validateObject)}>
             <div className="container px-5 my-5">
-                <h2 style={{marginLeft:'17%'}}>Create Customer</h2>
+                <h2 style={{marginLeft:'9%'}}>Create Customer</h2>
                 <Form id="contactForm" data-sb-form-api-token="API_TOKEN">
                     <div className="mb-3">
                         <label className="form-label" htmlFor="fullName"><b>Full name</b><span style={{color:"red"}}>*</span></label>

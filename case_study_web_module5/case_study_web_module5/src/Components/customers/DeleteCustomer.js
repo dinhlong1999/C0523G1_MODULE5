@@ -10,7 +10,7 @@ export function DeleteCustomer({show, closeModal, select}) {
             navigate("/customers")
             toast.success("Delete success");
         }else {
-            toast.warning("Failed")
+            toast.error("Failed")
         }
     }
 
@@ -37,8 +37,8 @@ export function DeleteCustomer({show, closeModal, select}) {
                                     <button type="button" className="btn btn-primary"
                                             onClick={() => {
                                                 remove(select)
-                                            }}><i
-                                        className="fa-solid fa-trash"></i>
+                                            }}>
+                                        Remove
                                     </button>
                                 </div>
                             </div>

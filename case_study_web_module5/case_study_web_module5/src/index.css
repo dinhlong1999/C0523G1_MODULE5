@@ -18,17 +18,9 @@ h2{
   margin-left: 30%;
 
 }
-.card{
-  height: 400px;
-  margin-top: 5%;
-  margin-left: 20%;
+
+.carousel-inner {
   box-shadow: 10px 10px 20px #51504B;
-}
-.carousel-inner{
-  box-shadow: 10px 10px 20px #51504B;
-}
-.card-text{
-  text-align: center;
 }
 .money{
   color: red;
@@ -40,10 +32,7 @@ h2{
 img{
   height: 550px;
 }
-.card{
-  width: 20rem;
-  height: 500px;
-}
+
 Footer{
   margin-top: 15px;
 }
@@ -70,4 +59,20 @@ Footer{
 }
 table{
   margin-top: 10px;
+}
+.pagination{
+  margin-left: 47%;
+}
+.on {
+  background-color: deepskyblue;
+  color: white;
+}
+.input{
+  margin-left: 5px;
+  margin-bottom: 5px;
+  box-shadow: 10px 10px 20px #51504B;
+  width: 16%;
+  border-radius: 10px;
+  padding: 5px;
+  text-align: center;
 }

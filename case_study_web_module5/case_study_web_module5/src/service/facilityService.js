@@ -1,62 +1,124 @@
-const facilityList =[
-    {
-        id: 1,
-        name: "Phòng Superior hướng vườn (garden superior)",
-        area: 40,
-        cost: "3.000.000Đ",
-        maximumPeople : 2,
-        typeRent: "Room",
-        images :"/img_3.png",
-    },
-    {
-        id: 2,
-        name: "Deluxe hướng biển (ocean deluxe)",
-        area: 30,
-        cost: "2.500.000Đ",
-        maximumPeople : 2,
-        typeRent: "Room",
-        images :"/img_4.png",
-    },
-    {
-        id: 3,
-        name: "Biệt thự Hồ bơi có 2 Phòng ngủ (2 Bedroom Pool Villa)",
-        area: 45,
-        cost: "5.500.000Đ",
-        maximumPeople : 4,
-        typeRent: "Villa",
-        images :"/img_5.png",
-    },
-    {
-        id: 4,
-        name: "Biệt thự 1 phòng ngủ Có hồ bơi Bao gồm bữa sáng (1 Bedroom Pool Villa With Breakfast)",
-        area: 50,
-        cost: "4.500.000Đ",
-        maximumPeople : 2,
-        typeRent: "Villa",
-        images :"/img_8.png",
-    },
-    {
-        id: 5,
-        name: "Phòng liên thông dành cho gia đình (Family Connecting Room)",
-        area: 50,
-        cost: "7.700.000Đ",
-        maximumPeople : 5,
-        typeRent: "Room",
-        images :"/img_9.png",
-    },
-    {
-        id: 6,
-        name: "Suite Tổng Thống 2 phòng ngủ (Two Bedroom Presidential Suite)",
-        area: 125,
-        cost: "19.000.000Đ",
-        maximumPeople : 5,
-        typeRent: "Room",
-        images :"/img_10.png",
+import axios from "axios";
+
+const URL_TYPE_FACILITY = "http://localhost:8081/typeRent/";
+const URL_VILLAS = "http://localhost:8081/villas/";
+const URL_HOUSES = "http://localhost:8081/houses/";
+const URL_ROOM = "http://localhost:8081/rooms/";
+
+export const getAllTypeRent = async () => {
+    try {
+        return await axios.get(URL_TYPE_FACILITY);
+    } catch (e) {
+        console.log(e)
     }
-]
-export function getAll() {
-    return facilityList;
 }
-export function saveFacility(facility) {
-    return facilityList.push(facility);
+
+export const getAllVilla = async () => {
+    try {
+        return await axios.get(URL_VILLAS);
+    } catch (e) {
+        console.log(e)
+    }
+}
+
+export const getAllRoom = async () => {
+    try {
+        return await axios.get(URL_ROOM);
+    } catch (e) {
+        console.log(e)
+    }
+}
+
+export const getAllHouse = async () => {
+    try {
+        return await axios.get(URL_HOUSES);
+    } catch (e) {
+        console.log(e)
+    }
+}
+
+export const deleteVilla = async (villaID) => {
+    try {
+        return await axios.delete(URL_VILLAS + villaID)
+    } catch (e) {
+        console.log(e)
+    }
+}
+export const deleteRoom = async (roomID) => {
+    try {
+        return await axios.delete(URL_ROOM + roomID)
+    } catch (e) {
+        console.log(e)
+    }
+}
+export const deleteHouse = async (houseID) => {
+    try {
+        return await axios.delete(URL_HOUSES + houseID)
+    } catch (e) {
+        console.log(e)
+    }
+}
+export const createVilla = async (villa) => {
+    try {
+        return await axios.post(URL_VILLAS, villa)
+    } catch (e) {
+        console.log(e)
+    }
+}
+export const createRoom = async (room) => {
+    try {
+        return await axios.post(URL_ROOM, room)
+    } catch (e) {
+        console.log(e)
+    }
+}
+export const createHouse = async (house) => {
+    try {
+        return await axios.post(URL_HOUSES, house)
+    } catch (e) {
+        console.log(e)
+    }
+}
+
+export const getHouseByID = async (id) =>{
+    try {
+        return await axios.get(URL_HOUSES+id)
+    }catch (e){
+        console.log(e)
+    }
+}
+export const getRoomByID = async (id) =>{
+    try {
+        return await axios.get(URL_ROOM+id)
+    }catch (e){
+        console.log(e)
+    }
+}
+export const getVillaByID = async (id) =>{
+    try {
+        return await axios.get(URL_VILLAS+id)
+    }catch (e){
+        console.log(e)
+    }
+}
+export const editHouse = async (house) =>{
+    try {
+        return await axios.put(URL_HOUSES+house.id,house)
+    }catch (e) {
+        console.log(e)
+    }
+}
+export const editVilla = async (villa) =>{
+    try {
+        return await axios.put(URL_VILLAS+villa.id,villa)
+    }catch (e) {
+        console.log(e)
+    }
+}
+export const editRoom = async (room) =>{
+    try {
+        return await axios.put(URL_ROOM+room.id,room)
+    }catch (e) {
+        console.log(e)
+    }
 }

@@ -14,8 +14,16 @@ function Header() {
                 </button>
                 <div className="collapse navbar-collapse" id="mynavbar">
                     <ul className="navbar-nav me-auto">
-                        <li className="nav-item">
-                            <a className="nav-link" style={{color: "black"}} href="javascript:void(0)">Facility</a>
+                        <li className="nav-item dropdown">
+                            <a className="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                               aria-expanded="false" style={{color:"black"}}>
+                                Facility
+                            </a>
+                            <ul className="dropdown-menu">
+                                <li><NavLink className={"dropdown-item"} to={"/villa"}>Villa</NavLink></li>
+                                <li><NavLink className={"dropdown-item"} to={"/room"}>Room</NavLink></li>
+                                <li><NavLink className={"dropdown-item"} to={"/house"}>House</NavLink></li>
+                            </ul>
                         </li>
                         <li className="nav-item">
                             <NavLink to="/contracts" style={{textDecoration: "none"}}>

@@ -1,0 +1,161 @@
+{
+  "product": [
+    {
+      "id": 1,
+      "codeProduct": "PROD-0001",
+      "name": "Máy đo huyết áp",
+      "quantity": 50,
+      "cost": 598000,
+      "date": "2022-01-24",
+      "describer": "Xuất sứ Đức",
+      "type": {
+        "id": 1,
+        "name": "Thiết bị y tế",
+        "description": "Hàng mới"
+      }
+    },
+    {
+      "id": 2,
+      "codeProduct": "PROD-0002",
+      "name": "Hoạt huyết",
+      "quantity": 100,
+      "cost": 250000,
+      "date": "2022-02-25",
+      "describer": "Xuất sứ Nhật Bản",
+      "type": {
+        "id": 2,
+        "name": "Thực phẩm chức năng",
+        "description": "Bán chạy"
+      }
+    },
+    {
+      "id": 3,
+      "codeProduct": "PROD-0003",
+      "name": "Thuốc hạ sốt",
+      "quantity": 150,
+      "cost": 150000,
+      "date": "2022-04-27",
+      "describer": "Xuất sứ Pháp",
+      "type": {
+        "id": 3,
+        "name": "Dược phẩm",
+        "description": "Bán chạy"
+      }
+    },
+    {
+      "codeProduct": "PROD-1111",
+      "name": "Khẩu trang",
+      "quantity": 50,
+      "cost": 15000,
+      "date": "2023-11-11",
+      "describer": "Xuất sứ Việt Nam",
+      "type": {
+        "id": 1,
+        "name": "Thiết bị y tế",
+        "description": "Hàng mới"
+      },
+      "id": 4
+    },
+    {
+      "codeProduct": "PROD-1112",
+      "name": "Thuốc hạ sốt",
+      "quantity": 50,
+      "cost": 15000,
+      "date": "2023-11-11",
+      "describer": "Xuất sứ Việt Nam",
+      "type": {
+        "id": 3,
+        "name": "Dược phẩm",
+        "description": "Bán chạy"
+      },
+      "id": 5
+    },
+    {
+      "codeProduct": "PROD-1114",
+      "name": "Thuốc say xe",
+      "quantity": 100,
+      "cost": 20000,
+      "date": "2024-11-11",
+      "describer": "Xuất sứ Việt Nam",
+      "type": {
+        "id": 3,
+        "name": "Dược phẩm",
+        "description": "Bán chạy"
+      },
+      "id": 6
+    },
+    {
+      "codeProduct": "PROD-9998",
+      "name": "Thuốc chống dị ứng",
+      "quantity": 100,
+      "cost": 15000,
+      "date": "2023-11-11",
+      "describer": "Xuất xứ Đông Lào",
+      "type": {
+        "id": 3,
+        "name": "Dược phẩm",
+        "description": "Bán chạy"
+      },
+      "id": 7
+    },
+    {
+      "codeProduct": "PROD-5555",
+      "name": "Thuốc chống tâm lý",
+      "quantity": 50,
+      "cost": 15000,
+      "date": "2023-11-11",
+      "describer": "Sản xuất codegym",
+      "type": {
+        "id": 3,
+        "name": "Dược phẩm",
+        "description": "Bán chạy"
+      },
+      "id": 8
+    },
+    {
+      "codeProduct": "PROD-2345",
+      "name": "Máy trợ tim khi đi thi",
+      "quantity": 50,
+      "cost": 25000,
+      "date": "2025-10-11",
+      "describer": "Sản xuất codegym",
+      "type": {
+        "id": 1,
+        "name": "Thiết bị y tế",
+        "description": "Hàng mới"
+      },
+      "id": 9
+    },
+    {
+      "codeProduct": "PROD-8888",
+      "name": "Thuốc say xe",
+      "quantity": 9.3,
+      "cost": 15000,
+      "date": "2023-12-09",
+      "describer": "Sản xuất campuchia",
+      "type": {
+        "id": 1,
+        "name": "Thiết bị y tế",
+        "description": "Hàng mới"
+      },
+      "id": 10
+    }
+  ],
+  "type": [
+    {
+      "id": 1,
+      "name": "Thiết bị y tế",
+      "description": "Hàng mới"
+    },
+    {
+      "id": 2,
+      "name": "Thực phẩm chức năng",
+      "description": "Bán chạy"
+    },
+    {
+      "id": 3,
+      "name": "Dược phẩm",
+      "description": "Bán chạy"
+    }
+  ]
+}

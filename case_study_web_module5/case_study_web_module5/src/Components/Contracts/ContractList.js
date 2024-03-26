@@ -2,18 +2,22 @@ import {NavLink} from "react-router-dom";
 import * as contractService from "../../service/contractService";
 import {useEffect, useState} from "react";
 import {DeleteContract} from "./DeleteContract";
+import {PageList} from "../Pages";
 
 export function ContractList() {
     const [contracts,setContracts] = useState([]);
     const [contractNumber,setContractNumber] = useState("");
     const [show,setShow] = useState(false);
     const [select,setSelect] = useState(null)
+    const [currentPage,setCurrentPage] = useState(1);
+    const [totalItem,setTotalItem] = useState(0)
     useEffect(() =>{
         getData();
-    },[contractNumber])
+    },[contractNumber,currentPage])
     const getData = async () => {
-        let data = await contractService.getALlContract(contractNumber);
-        setContracts(data);
+        let data = await contractService.getALlContract(contractNumber,currentPage);
+        setContracts(data.data);
+        setTotalItem(data.headers["x-total-count"])
     }
 
     const closeModal = async () => {
@@ -35,7 +39,7 @@ export function ContractList() {
             <input type="text" placeholder="Please input contract search" style={{width:"15%",borderRadius:"10px",padding:"5px"}} onChange={event => setContractNumber(event.target.value)}/>
             <div className="card-body">
                 <div className="table-responsive" style={{overflowX: "visible"}}>
-                    <table className="table table-bordered" id="dataTable" width="100%" cellSpacing="0">
+                    <table className="table table-hover table-bordered" id="dataTable" width="100%" cellSpacing="0">
                         <thead>
                         <tr>
                             <th>N0.</th>
@@ -57,7 +61,8 @@ export function ContractList() {
                             <td>{ new Intl.NumberFormat('vi-VN', {
                                 style: 'currency',
                                 currency: 'VND',
-                            }).format(item.depositAmount)}</td>
+                            }).format(item.depositAmount)}
+                            </td>
                             <td>{ new Intl.NumberFormat('vi-VN', {
                                 style: 'currency',
                                 currency: 'VND',
@@ -85,6 +90,12 @@ export function ContractList() {
             >
 
             </DeleteContract>
+            <PageList
+                currentPage={currentPage}
+                totalCustomer={totalItem}
+                sentPage={setCurrentPage}
+            >
+            </PageList>
         </div>
     )
 }
